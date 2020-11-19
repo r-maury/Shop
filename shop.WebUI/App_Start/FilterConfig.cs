@@ -1,9 +1,12 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace shop.WebUI {
-    public class FilterConfig {
-        public static void RegisterGlobalFilters(GlobalFilterCollection filters) {
+namespace Shop.WebUI
+{
+    public class FilterConfig
+    {
+        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+        {
             filters.Add(new HandleErrorAttribute());
         }
     }

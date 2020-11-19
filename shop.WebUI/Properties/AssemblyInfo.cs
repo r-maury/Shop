@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de 
 // l’ensemble d’attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("shop.WebUI")]
+[assembly: AssemblyTitle("Shop.WebUI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("shop.WebUI")]
+[assembly: AssemblyProduct("Shop.WebUI")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l’ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("daa8462a-8983-408a-8608-d00ea0549cd8")]
+[assembly: Guid("bb64efc5-7b14-4577-9e69-5e6d2dd14237")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //
