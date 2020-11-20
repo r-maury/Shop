@@ -47,17 +47,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\shop.core\shop.core.csproj">
+    <ProjectReference Include="..\shop.core\Shop.core.csproj">
       <Project>{1cfd3d18-378f-4d17-80c7-90620477bf59}</Project>
-      <Name>shop.core</Name>
+      <Name>Shop.core</Name>
     </ProjectReference>
     <ProjectReference Include="..\shop.DataAccess.SqL\shop.DataAccess.SQL.csproj">
       <Project>{25afbcf8-5a5c-4070-9625-14c8339ff7e3}</Project>
       <Name>shop.DataAccess.SQL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\shop.WebUI\shop.WebUI.csproj">
-      <Project>{4e633c59-a948-40d3-8c06-40bff60a93b6}</Project>
-      <Name>shop.WebUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

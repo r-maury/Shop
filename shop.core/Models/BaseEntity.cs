@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Shop.Core.Models {
-    public class ProductCategory : BaseEntity {
-        public string Category { get; set; }
+    public class BaseEntity {
+        public int Id { get; set; }
     }
 }

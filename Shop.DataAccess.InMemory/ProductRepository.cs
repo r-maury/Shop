@@ -11,14 +11,14 @@ namespace Shop.DataAccess.InMemory {
         ObjectCache cache = MemoryCache.Default;
         List<Product> products;
 
-        public ProductRepository(ObjectCache cache) {
+        public ProductRepository() {
             products = cache["products"] as List<Product>;
             if(products == null) {
                 products = new List<Product>();
             }
         }
 
-        public void commit() {
+        public void Commit() {
             cache["products"] = products;
         }
 
@@ -33,6 +33,15 @@ namespace Shop.DataAccess.InMemory {
                 toUpdate = product;
             } else {
                 throw new Exception("Product Not Found");
+            }
+        }
+
+        public Product FindById(int id) {
+            Product p = products.Find(p1 => p1.Id == id);
+            if(p != null) {
+                return p;
+            } else {
+                throw new Exception("Product not found");
             }
         }
 
