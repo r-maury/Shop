@@ -6,30 +6,39 @@ using System.Web.Mvc;
 using Shop.Core.Models;
 using Shop.DataAccess.InMemory;
 
-namespace Shop.WebUI.Controllers {
-    public class ProductCategoryController : Controller {
+namespace Shop.WebUI.Controllers
+{
+    public class ProductCategoryController : Controller
+    {
         InMemoryRepository<ProductCategory> context;
 
-        public ProductCategoryController() {
+        public ProductCategoryController()
+        {
             context = new InMemoryRepository<ProductCategory>();
         }
 
 
-        public ActionResult Index() {
+        public ActionResult Index()
+        {
             List<ProductCategory> productCategories = context.Collection().ToList();
             return View(productCategories);
         }
 
-        public ActionResult Create() {
+        public ActionResult Create()
+        {
             ProductCategory pCategory = new ProductCategory();
             return View(pCategory);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ProductCategory p) {
-            if(!ModelState.IsValid) {
+        public ActionResult Create(ProductCategory p)
+        {
+            if (!ModelState.IsValid)
+            {
                 return View(p);
-            } else {
+            }
+            else
+            {
                 context.Insert(p);
                 context.Commit();
                 return RedirectToAction("Index");
@@ -37,15 +46,22 @@ namespace Shop.WebUI.Controllers {
 
         }
 
-        public ActionResult Edit(int id) {
-            try {
+        public ActionResult Edit(int id)
+        {
+            try
+            {
                 ProductCategory p = context.FindById(id);
-                if(p == null) {
+                if (p == null)
+                {
                     return HttpNotFound();
-                } else {
+                }
+                else
+                {
                     return View(p);
                 }
-            } catch(Exception) {
+            }
+            catch (Exception)
+            {
 
                 return HttpNotFound();
             }
@@ -54,35 +70,52 @@ namespace Shop.WebUI.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ProductCategory p, int id) {
+        public ActionResult Edit(ProductCategory p, int id)
+        {
             ProductCategory catToEdit = context.FindById(id);
-            try {
-                if(catToEdit == null) {
+            try
+            {
+                if (catToEdit == null)
+                {
                     return HttpNotFound();
-                } else {
-                    if(!ModelState.IsValid) {
+                }
+                else
+                {
+                    if (!ModelState.IsValid)
+                    {
                         return View(catToEdit);
-                    } else {
+                    }
+                    else
+                    {
                         //context.Update(pToEdit);
                         catToEdit.Category = p.Category;
                         return RedirectToAction("Index");
                     }
                 }
-            } catch(Exception) {
+            }
+            catch (Exception)
+            {
 
                 return HttpNotFound();
             }
         }
 
-        public ActionResult Delete(int id) {
-            try {
+        public ActionResult Delete(int id)
+        {
+            try
+            {
                 ProductCategory p = context.FindById(id);
-                if(p == null) {
+                if (p == null)
+                {
                     return HttpNotFound();
-                } else {
+                }
+                else
+                {
                     return View(p);
                 }
-            } catch(Exception) {
+            }
+            catch (Exception)
+            {
 
                 return HttpNotFound();
             }
@@ -90,17 +123,24 @@ namespace Shop.WebUI.Controllers {
 
         [HttpPost]
         [ActionName("Delete")]
-        public ActionResult ConfirmDelete(int id) {
-            try {
+        public ActionResult ConfirmDelete(int id)
+        {
+            try
+            {
                 ProductCategory pToDelete = context.FindById(id);
-                if(pToDelete == null) {
+                if (pToDelete == null)
+                {
                     return HttpNotFound();
-                } else {
+                }
+                else
+                {
                     context.Delete(id);
                     context.Commit();
                     return RedirectToAction("Index");
                 }
-            } catch(Exception) {
+            }
+            catch (Exception)
+            {
 
                 return HttpNotFound();
             }

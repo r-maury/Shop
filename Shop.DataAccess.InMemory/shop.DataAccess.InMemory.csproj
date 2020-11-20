@@ -42,18 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProductCategoryRepository.cs" />
-    <Compile Include="ProductRepository.cs" />
+    <Compile Include="InMemoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\shop.core\Shop.core.csproj">
-      <Project>{1cfd3d18-378f-4d17-80c7-90620477bf59}</Project>
-      <Name>Shop.core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\shop.DataAccess.SqL\shop.DataAccess.SQL.csproj">
-      <Project>{25afbcf8-5a5c-4070-9625-14c8339ff7e3}</Project>
-      <Name>shop.DataAccess.SQL</Name>
+    <ProjectReference Include="..\Shop.Core\Shop.Core.csproj">
+      <Project>{ef20b635-b75a-4a66-86c2-d77e0390a316}</Project>
+      <Name>Shop.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,8 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop.Core.Models {
-    public class Product : BaseEntity {
+namespace Shop.Core.Models
+{
+    public class Product : BaseEntity
+    {
+        
         [StringLength(20)]
         public string Name { get; set; }
         public string Description { get; set; }

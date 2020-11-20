@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop.Core.Models {
-    public class BaseEntity {
+namespace Shop.Core.Models
+{
+    public abstract class BaseEntity
+    {
         public int Id { get; set; }
     }
 }
